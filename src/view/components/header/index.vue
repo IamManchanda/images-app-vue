@@ -7,19 +7,33 @@
     </div>
     <div class="top-bar-right c-Header_RightBar">
       <ul class="menu c-Header_Menu">
-        <li><a @click="login">Login</a></li>
+        <router-link to="/" tag="li" active-class="is-active" exact>
+          <a>Home</a>
+        </router-link>
+        <template v-if="isLoggedIn">
+          <router-link to="/upload" tag="li" active-class="is-active" exact>
+            <a>Upload</a>
+          </router-link>
+          <li><a @click="logout">Logout</a></li>
+        </template>
+        <template v-else>
+          <li><a @click="login">Login</a></li>
+        </template>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'ComponentHeader',
+  computed: {
+    ...mapGetters(['isLoggedIn']),
+  },
   methods: {
-    ...mapActions(['login']),
+    ...mapActions(['login', 'logout']),
   },
 };
 </script>
