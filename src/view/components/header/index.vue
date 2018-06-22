@@ -17,7 +17,7 @@
           <li><a @click="logout">Logout</a></li>
         </template>
         <template v-else>
-          <li><a @click="login">Login</a></li>
+          <li><a @click="login">Login to Upload</a></li>
         </template>
       </ul>
     </div>

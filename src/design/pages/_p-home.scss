@@ -1,1 +1,17 @@
-.p-Home {}
+.p-Home {
+  column-count: 2;
+  column-gap: 0;
+
+  @include breakpoint(medium) {
+    column-count: 5;
+  }
+
+  @include breakpoint(large) {
+    column-count: 8;
+  }
+}
+
+.p-Home_ImageContent {
+  max-width: 100%;
+  padding: 5px;
+}

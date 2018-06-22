@@ -4,7 +4,11 @@
       <component-header />
     </div>
     <div class="grid-container fluid app-Root_MainView">
-      <router-view/>
+      <div class="grid-x grid-margin-x grid-padding-y">
+        <div class="cell">
+          <router-view/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
